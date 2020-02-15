@@ -1,4 +1,4 @@
-{% set version = '3.3.0' %}
+{% set version = "3.4.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/arsenal_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/arsenal/arsenal_{{ version }}.tar.gz
-  sha256: f0fd9d477b5ed2470495e4a24cde90102c3c7a20de31dcace18a19df5889c1ae
+  sha256: 96f4939ab03b87f7f03d4e05086720b8b1b7e1e7675d21b251bd4976e5041824
 
 build:
   merge_build_host: True  # [win]
