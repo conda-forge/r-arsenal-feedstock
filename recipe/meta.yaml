@@ -1,4 +1,4 @@
-{% set version = "3.4.0" %}
+{% set version = "3.5.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/arsenal_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/arsenal/arsenal_{{ version }}.tar.gz
-  sha256: 96f4939ab03b87f7f03d4e05086720b8b1b7e1e7675d21b251bd4976e5041824
+  sha256: a046f9f0e2d26af58da273d63404882e84b534974425d4ba3a7cccc9c920712b
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -37,20 +37,13 @@ test:
 
 about:
   home: https://github.com/eheinzen/arsenal, https://cran.r-project.org/package=arsenal
-  license: GPL-2
-  summary: An Arsenal of 'R' functions for large-scale statistical summaries, which are streamlined
-    to work within the latest reporting tools in 'R' and 'RStudio' and which use formulas
-    and versatile summary statistics for summary tables and models. The primary functions
-    include tableby(), a Table-1-like summary of multiple variable types 'by' the levels
-    of one or more categorical variables; paired(), a Table-1-like summary of multiple
-    variable types paired across two time points; modelsum(), which performs simple
-    model fits on one or more endpoints for many variables (univariate or adjusted for
-    covariates); freqlist(), a powerful frequency table across many categorical variables;
-    comparedf(), a function for comparing data.frames; and write2(), a function to output
-    tables to a document.
+  license: GPL-2.0-or-later
+  summary: An Arsenal of 'R' functions for large-scale statistical summaries, which are streamlined to work within the latest reporting tools in 'R' and 'RStudio' and which use formulas and versatile summary statistics for summary tables and models. The primary functions include tableby(), a Table-1-like summary of multiple
+    variable types 'by' the levels of one or more categorical variables; paired(), a Table-1-like summary of multiple variable types paired across two time points; modelsum(), which performs simple model fits on one or more endpoints for many variables (univariate or adjusted for covariates); freqlist(), a powerful frequency
+    table across many categorical variables; comparedf(), a function for comparing data.frames; and write2(), a function to output tables to a document.
   license_family: GPL2
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
