@@ -3,7 +3,7 @@ About r-arsenal
 
 Home: https://github.com/eheinzen/arsenal, https://cran.r-project.org/package=arsenal
 
-Package license: GPL-2
+Package license: GPL-2.0-or-later
 
 Feedstock license: BSD-3-Clause
 
