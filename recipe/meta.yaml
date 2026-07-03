@@ -17,16 +17,23 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-    - r-knitr
+    - r-glue
+    - r-knitr >=1.29
   run:
     - r-base
-    - r-knitr
+    - r-glue
+    - r-knitr >=1.29
 
 test:
   commands:
@@ -34,7 +41,8 @@ test:
     - "\"%R%\" -e \"library('arsenal')\""  # [win]
 
 about:
-  home: https://github.com/eheinzen/arsenal, https://cran.r-project.org/package=arsenal
+  home: https://cran.r-project.org/package=arsenal
+  dev_url: https://github.com/eheinzen/arsenal
   license: GPL-2.0-or-later
   summary: An Arsenal of 'R' functions for large-scale statistical summaries, which are streamlined to work within the latest reporting tools in 'R' and 'RStudio' and which use formulas and versatile summary statistics for summary tables and models. The primary functions include tableby(), a Table-1-like summary of 
     multiple variable types 'by' the levels of one or more categorical variables; paired(), a Table-1-like summary of multiple variable types paired across two time points; modelsum(), which performs simple model fits on one or more endpoints for many variables (univariate or adjusted for covariates); freqlist(), a 
