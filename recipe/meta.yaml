@@ -1,4 +1,4 @@
-{% set version = "3.7.1" %}
+{% set version = "3.7.4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/arsenal_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/arsenal/arsenal_{{ version }}.tar.gz
-  sha256: 504ab66f8eca836e88f9041bd8e631b995bed346d38808d5f0d1d10be3567834
+  sha256: c478e918a2f0c778c9c3ee10d200f70d14870310769640c1e8771bab2ca3c112
 
 build:
   number: 0
